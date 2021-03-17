@@ -1,7 +1,4 @@
 
-
-// OPTIMIZE WAY
-
 #include <iostream>
 using namespace std;
 
