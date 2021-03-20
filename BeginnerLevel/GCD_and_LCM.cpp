@@ -1,34 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 // LCM => (n1 + n2)/ GCD
-int LCM(int n1, int n2)
-{
-    int max = (n1 > n2) ? n1 : n2;
-    do
-    {
-        if (max % n1 == 0 && max % n2 == 0)
-        {
-            return max;
-            break;
-        }
-        else
-        {
-            max++;
-        }
-    } while (true);
+
+long long int gcd(long long int a, long long int b) {
+ 
+    if(b==0) {
+        return a;
+    }
+ 
+    return gcd(b, a%b);
 }
 
-int GCD(int n1, int n2)
-{
-
-    while (n1 != n2)
-    {
-        if (n1 > n2)
-            n1 -= n2;
-        else
-            n2 -= n2;
-    }
-    return n1;
+long long int lcm(long long int a, long long int b) {
+ 
+    return (a*b) / gcd(a,b);
 }
 
 
@@ -45,10 +30,15 @@ int main()
         /* code */
         cin >> a >> b;
 
-        // cout << GCD(a, b);
-        // cout << LCM(a, b);
-        long long int gcd = __gcd(a,b);
-        cout << gcd <<" "<<(a*b)/gcd;
+        // method 1 :
+        // cout << gcd(a,b) <<" "<<lcm(a,b);
+        // cout<<endl;
+
+        // method 2 : inbuild function
+        cout << __gcd(a,b) <<" "<< (a*b)/__gcd(a,b);
+        cout << endl;
+
+
     
     }
 }
