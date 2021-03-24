@@ -12,15 +12,16 @@ int main()
     while (T--)
     {
         cin >> Q >> P;
-        int purshase = Q * P;
+        float purshase = Q * P;
         if (purshase > 1000)
         {
-            int dis = purshase * 0.1;
-            cout <<setprecision(6) << dis << endl;
+            float dis = purshase * 0.1;
+            purshase -= dis;
+            printf("\n%f",purshase);
         }
         else
         {
-            cout <<setprecision(6) << purshase << endl;
+            printf("\n%f",purshase);
         }
     }
 }
