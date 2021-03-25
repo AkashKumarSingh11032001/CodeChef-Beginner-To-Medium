@@ -1,27 +1,24 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main()
 {
+    int test;
+    float q, p;
 
-    int T;
-    cin >> T;
+    scanf("%d", &test);
 
-    int Q, P;
-
-    while (T--)
+    while (test--)
     {
-        cin >> Q >> P;
-        float purshase = Q * P;
-        if (purshase > 1000)
-        {
-            float dis = purshase * 0.1;
-            purshase -= dis;
-            printf("\n%f",purshase);
-        }
-        else
-        {
-            printf("\n%f",purshase);
-        }
+        scanf("%f%f", &q, &p);
+
+        if (q <= 1000)
+            printf("%f\n", q * p);
+
+        if (q > 1000)
+            printf("%f\n", (q * p) * 0.9);
     }
+
+    return 0;
 }
